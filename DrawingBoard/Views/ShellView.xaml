@@ -1,0 +1,29 @@
+﻿<Window x:Class="DrawingBoard.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrawingBoard.Views"
+        xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="ShellView" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="MainCanvas" Background="Black">
+            <Canvas.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add Algo Block" cal:Message.Attach="AddAlgoBlock" />
+                    <MenuItem Header="Remove Algo Block" cal:Message.Attach="RemoveAlgoBlock"/>
+                </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Add" x:Name="AddButton" Click="AddButton_Click"/>
+            <Button Content="Remove" x:Name="RemoveButton" Click="RemoveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

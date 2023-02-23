@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawingBoard", "DrawingBoard\DrawingBoard.csproj", "{FE90EFCC-F9D4-4D56-AEFC-779E6B7DB213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boxes", "Boxes\Boxes.csproj", "{ABD097B3-AA2B-4AB7-A30C-D716D4142802}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolylineDrawing", "PolylineDrawing\PolylineDrawing.csproj", "{44586811-82C7-4D23-BE82-F361BAE6D340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomInOut", "ZoomInOut3\ZoomInOut.csproj", "{EE856871-48F7-438C-81C0-D2D376BCAA3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE90EFCC-F9D4-4D56-AEFC-779E6B7DB213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE90EFCC-F9D4-4D56-AEFC-779E6B7DB213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE90EFCC-F9D4-4D56-AEFC-779E6B7DB213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE90EFCC-F9D4-4D56-AEFC-779E6B7DB213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD097B3-AA2B-4AB7-A30C-D716D4142802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD097B3-AA2B-4AB7-A30C-D716D4142802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD097B3-AA2B-4AB7-A30C-D716D4142802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD097B3-AA2B-4AB7-A30C-D716D4142802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44586811-82C7-4D23-BE82-F361BAE6D340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44586811-82C7-4D23-BE82-F361BAE6D340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44586811-82C7-4D23-BE82-F361BAE6D340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44586811-82C7-4D23-BE82-F361BAE6D340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE856871-48F7-438C-81C0-D2D376BCAA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE856871-48F7-438C-81C0-D2D376BCAA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE856871-48F7-438C-81C0-D2D376BCAA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE856871-48F7-438C-81C0-D2D376BCAA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E44C2F44-22BE-4829-90E7-AD660E5A6D10}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿<Window x:Class="ZoomInOut3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZoomInOut3"
+        mc:Ignorable="d"
+        x:Name="MyWindow"
+        Title="MainWindow" Height="450" Width="800">
+    <!-- Reference : https://stackoverflow.com/questions/22489400/creating-a-wpf-window-that-allows-zooming-and-panning/22489485#22489485 -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- This ScrollViewer enables the panning -->
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="MainCanvas" Background="Black" Height="450" Width="800"> <!-- Need to set a fixed height and width for scrollbars to appear upon zooming -->
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="{Binding ElementName=ZoomSlider, Path=Value}" ScaleY="{Binding ElementName=ZoomSlider, Path=Value}" />
+                </Canvas.LayoutTransform>                
+            </Canvas>            
+        </ScrollViewer>
+
+        <!-- This Slider controls the zoom level -->
+        <Slider x:Name="ZoomSlider" Orientation="Horizontal" Grid.Row="1" Minimum="0.0" Maximum="8.0" LargeChange="0.25" SmallChange="0.01"  Value="1.0" />
+
+    </Grid>
+</Window>

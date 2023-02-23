@@ -1,0 +1,50 @@
+﻿<Window x:Class="ZoomInOut2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZoomInOut2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- This ScrollViewer enables the panning -->
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+            <!-- This StackPanel is the container for the zoomable/pannable content. -->
+            <!-- Any container control (StackPanel, DockPanel, Grid, etc) may be used here. -->
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+
+                <!-- This ScaleTransform implements the zooming and is bound the Value of the ZoomSlider -->
+                <StackPanel.LayoutTransform>
+                    <ScaleTransform ScaleX="{Binding ElementName=ZoomSlider, Path=Value}" ScaleY="{Binding ElementName=ZoomSlider, Path=Value}" />
+                </StackPanel.LayoutTransform>
+
+                <!-- Here is your custom content -->
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+                <Button>Foo</Button>
+                <Button>Bar</Button>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- This Slider controls the zoom level -->
+        <Slider x:Name="ZoomSlider" Orientation="Horizontal" Grid.Row="1" Minimum="0.0" Maximum="8.0" LargeChange="0.25" SmallChange="0.01"  Value="1.0" />
+
+    </Grid>
+</Window>
