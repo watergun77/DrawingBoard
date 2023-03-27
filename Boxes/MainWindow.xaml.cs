@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Boxes
 {
@@ -57,8 +60,8 @@ namespace Boxes
                 //Debug.WriteLine($"mousePos : X={mousePos.X} Y={mousePos.Y}");
 
                 // center the rect on the mouse
-                double left = mousePos.X - (bodyWidth / 2);
-                double top = mousePos.Y - (bodyHeight / 2);
+                double left = mousePos.X;
+                double top = mousePos.Y;
 
                 Canvas.SetLeft(box, left);
                 Canvas.SetTop(box, top);
@@ -78,15 +81,21 @@ namespace Boxes
         }
 
         private void AlgoBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
+        {            
             Canvas? box = sender as Canvas;
             if (box != null)
             {
+                Point boxPosition = box.PointToScreen(new Point(0, 0));
+                SetCursorPos((int)boxPosition.X, (int)boxPosition.Y);
+
                 box.CaptureMouse();
+
                 isMovingAlgoBox = true;
                 e.Handled = true;
             }
         }
+        [DllImport("User32.dll")]
+        private static extern bool SetCursorPos(int X, int Y);
         #endregion
 
         private void Interface_MouseLeave(object sender, MouseEventArgs e)
